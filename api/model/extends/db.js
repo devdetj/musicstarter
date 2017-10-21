@@ -4,12 +4,10 @@ class db{
     insert(clt,data,callback){
 
         MongoClient.connect("mongodb://localhost:27017/musicstarter", function(err, db) {
-
             if (err) {
 
                 console.error(err);
             }
-
             db.collection(clt).insert(data,function(err2, docs) {
 
                 if (err2) {
@@ -66,9 +64,7 @@ class db{
                 callback(docs);
             });
         });
-
     }
-
 }
 
 module.exports = db;
