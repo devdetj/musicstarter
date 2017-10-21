@@ -1,5 +1,4 @@
 var name = require('./extends/name.js');
-console.log(name);
 
 class pre_user extends name{
 
