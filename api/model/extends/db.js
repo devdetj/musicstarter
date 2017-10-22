@@ -1,13 +1,16 @@
-var MongoClient = require('mongodb').MongoClient;
+
 
 class db{
     insert(clt,data,callback){
-
+        var MongoClient = require('mongodb').MongoClient;
         MongoClient.connect("mongodb://localhost:27017/musicstarter", function(err, db) {
+
             if (err) {
 
                 console.error(err);
+                db.close();
             }
+
             db.collection(clt).insert(data,function(err2, docs) {
 
                 if (err2) {
@@ -15,19 +18,14 @@ class db{
                     console.error(err2);
 
                 }
-                if(docs.ops[0] !== undefined) {
-
-                    callback(docs.ops[0]);
-
-                }else {
-
-                    callback(false);
-                }
+                callback(docs);
+                db.close();
             });
-
         });
+
     }
     remove(clt,data,callback){
+        var MongoClient = require('mongodb').MongoClient;
         MongoClient.connect("mongodb://localhost:27017/musicstarter", function(err, db) {
 
             if (err) {
@@ -43,25 +41,34 @@ class db{
 
                 }
                 callback(docs);
+                db.close();
             });
         });
     }
     find(clt,data,callback){
+        var MongoClient = require('mongodb').MongoClient;
         MongoClient.connect("mongodb://localhost:27017/musicstarter", function(err, db) {
 
             if (err) {
 
                 console.error(err);
+                db.close();
             }
 
-            db.collection(clt).find(data,function(err2, docs) {
+            db.collection(clt).find(data).toArray(function(err2, docs) {
 
                 if (err2) {
 
                     console.error(err2);
 
                 }
-                callback(docs);
+                if(docs[1] == undefined){
+                    callback(docs[0]);
+                }else{
+                    callback('existen mas de 1 usuario con esas credenciales');
+                }
+                db.close();
+
             });
         });
     }
