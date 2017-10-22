@@ -25,9 +25,10 @@ module.exports.remove = function (name,passwd,email, callback){
 };
 module.exports.login = function (name,passwd,callback){
     var dbs = new db();
-    dbs.find('user',{name:name,passwd:passwd},function(user){
 
-        callback(user);
+    dbs.find('user',{ "name":name, "passwd":passwd }, function( user ) {
+
+        callback( user );
         dbs = null;
     });
     dbs = null;
