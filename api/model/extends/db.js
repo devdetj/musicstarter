@@ -62,11 +62,8 @@ class db{
                     console.error(err2);
 
                 }
-                if(docs[1] == undefined){
-                    callback(docs[0]);
-                }else{
-                    callback('existen mas de 1 usuario con esas credenciales');
-                }
+                callback(docs);
+
                 db.close();
 
             });

@@ -6,6 +6,5 @@ class id_dad extends name{
         super(name);
 
     }
-
 }
 module.exports=id_dad;
