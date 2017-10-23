@@ -28,7 +28,7 @@ module.exports.login = function (name,passwd,callback){
 
     dbs.find('user',{ "name":name, "passwd":passwd }, function( user ) {
 
-        callback( user );
+        callback( user[0] );
         dbs = null;
     });
     dbs = null;
