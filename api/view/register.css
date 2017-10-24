@@ -1,0 +1,25 @@
+body {
+	background: #E4EDEE;
+}
+
+form {
+	background: #CCD0D8;
+	position: relative;
+	padding: 10px;
+	padding-right: 15px;
+	border: solid 1px #95A2B0;
+	top: 100px;
+	align-content: center;
+	align-items: center;
+}
+input {
+	margin: 5px;
+}
+.btn_submit {
+	height: 40px;
+	width: 70px;
+	border: 1px solid grey;
+}
+.btn_submit_success {
+    border: 2px solid limegreen !important;
+}
