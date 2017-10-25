@@ -35,9 +35,17 @@ function validate() {
         if(passwd.validity.valueMissing) mssg +=
             "<p>El campo contraseña, no puede ir vacío</p>"
     }
+
+    // Conditions validator
+    elemento = document.getElementById("conditions");
+    if (!elemento.checked) {
+        mssg +=
+            "Tiene que aceptar los términos y condiciones"
+    }
     document.getElementById("errors").innerHTML = "<strong>" + mssg + "</strong>";
     document.getElementById("errors").style = "display: block";
     return mssg?false:true;
 }
 
-//document.getElementById("submit").classList.add("btn_submit_success");
+// ..document.getElementById("submit").classList.add("btn_submit_success");
+// reCAPTCHA
