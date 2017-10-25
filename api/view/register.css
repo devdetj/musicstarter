@@ -1,36 +1,9 @@
-input {
-    margin: 5px;
-}
-
-form {
-    margin-top: 140px;
-    margin-bottom: 80px;
-	background: #CCD0D8;
-	position: relative;
-	padding: 10px;
-	padding-right: 15px;
-	border: solid 1px #95A2B0;
-	align-content: center;
-	align-items: center;
-    width: 85%;
-}
-
 #errors {
     position: relative;
     display: none;
     margin-top: 40px;
 }
 
-.btn_submit {
-	height: 40px;
-	width: 70px;
-	border: 1px solid grey;
-}
 .btn_submit_success {
     border: 2px solid limegreen !important;
-}
-
-#header {
-    position: fixed;
-    z-index: 1;
 }

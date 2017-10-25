@@ -49,5 +49,13 @@ function validate() {
     return mssg?false:true;
 }
 
+/*
+var form = document.getElementById("form");
+
+if(form.submit()) {
+    document.getElementById("submit").classList.add("btn_submit_success");
+}
+*/
+
 // ..document.getElementById("submit").classList.add("btn_submit_success");
 // reCAPTCHA

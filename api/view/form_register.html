@@ -26,7 +26,7 @@
 
 	<div class="container">
 
-		<form class="row" method="post" novalidate> <!-- action="" -->
+		<form id="form" class="row" method="post" novalidate> <!-- action="" -->
 
             <input id="name" type="text" placeholder="Name" name="name" class="col-xs-12 form-control"
                    pattern="[a-zA-Z]*" minlength="3" maxlength="32" required>
@@ -36,9 +36,10 @@
 
             <input id="passwd" type="password" placeholder="Password" name="passwd" class="col-xs-12 form-control"
                    minlength="6" required>
-            <input type="checkbox" id="conditions" required>
 
-            <input type="submit" class="col-xs-12 btn btn-default btn_submit" id="submit" value="Enviar"> <!-- onsubmit="return validate()" -->
+            <input type="checkbox" id="conditions" required><a><small> Terms & Conditions</small></a>
+
+            <input type="submit" class="col-xs-12 btn btn-default btn_submit" id="submit" value="Enviar">
 
 		</form>
         <p class="text-danger" id="errors" class="errors"></p>
