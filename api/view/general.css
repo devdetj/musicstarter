@@ -1,0 +1,17 @@
+html {
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 8px;
+    background: white;
+}
+
+body {
+    background: #d6d6d6;
+    border: grey solid 1px;
+    border-top-left-radius: 12px !important;
+    border-bottom-right-radius: 1px !important;
+    border-radius: 5px;
+    padding-bottom: 100%;
+    padding-left: 25px;
+}
