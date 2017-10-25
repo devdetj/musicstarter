@@ -64,5 +64,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/h5bp/html5-boilerplate.git"
+  },
+  "dependencies": {
+    "express-formidable": "^1.0.0"
   }
 }
