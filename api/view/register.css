@@ -1,8 +1,8 @@
 html {
-    padding-top: 5px;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-bottom: 5px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 8px;
     background: white;
 }
 
@@ -12,8 +12,14 @@ body {
     border-top-left-radius: 12px !important;
     border-bottom-right-radius: 1px !important;
     border-radius: 5px;
-
+    padding-bottom: 100%;
+    padding-left: 25px;
 }
+
+input {
+    margin: 5px;
+}
+
 form {
     margin-top: 140px;
     margin-bottom: 80px;
@@ -24,10 +30,15 @@ form {
 	border: solid 1px #95A2B0;
 	align-content: center;
 	align-items: center;
+    width: 85%;
 }
-input {
-	margin: 5px;
+
+#errors {
+    position: relative;
+    display: none;
+    margin-top: 40px;
 }
+
 .btn_submit {
 	height: 40px;
 	width: 70px;
@@ -35,12 +46,6 @@ input {
 }
 .btn_submit_success {
     border: 2px solid limegreen !important;
-}
-
-#errors {
-    position: relative;
-    display: none;
-    margin-top: 400px;
 }
 
 #header {
