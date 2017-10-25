@@ -1,3 +1,5 @@
+var user_tool = required(../controller/user_tool);
+
 document.getElementById("submit").onclick = function(evnt) {
     var valido = validate();
     if (!valido) return false;
@@ -46,6 +48,10 @@ function validate() {
     }
     document.getElementById("errors").innerHTML = "<strong>" + mssg + "</strong>";
     document.getElementById("errors").style = "display: block";
+
+   if (mssg == true) {
+    }
+
     return mssg?false:true;
 }
 
