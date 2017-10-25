@@ -26,6 +26,8 @@ function validate() {
     if(!email.validity.valid) {
         if(email.validity.valueMissing) mssg +=
             "<p>El campo email, no puede ir vacío</p>";
+        if(email.validity.patternMismatch) mssg +=
+            "<p>El email, tiene que tener un formato de email válido</p>"
     }
 
     // Password validator

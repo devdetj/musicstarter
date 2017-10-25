@@ -31,7 +31,7 @@
                    pattern="[a-zA-Z]*" minlength="3" maxlength="32" required>
 
             <input id="email" type="email" placeholder="Email" name="email" class="col-xs-12 form-control"
-                   required>
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
 
             <input id="passwd" type="password" placeholder="Password" name="passwd" class="col-xs-12 form-control"
                    minlength="6" required>
