@@ -10,22 +10,34 @@
 	<link rel="stylesheet" href="register.css">
 </head>
 <body>
+
+    <div class="container" id="header">
+
+        <header>
+
+            <h1>MusicStarter | <small>Register</small></h1>
+
+        </header>
+
+    </div>
+
 	<div class="container">
-        <!-- action="../controller/register.js" -->
-		<form class="row" method="post" novalidate>
-			<input id="name" type="text" placeholder="Name" name="name" class="col-xs-12 form-control" required>
-            <p class="text-warning" id="warning_name"></p>
-            <p class="text-success" id="success_name"></p>
-            <input id="email" type="email" placeholder="Email" name="email" class="col-xs-12 form-control" required>
-            <p class="text-warning" id="warning_email"></p>
-            <p class="text-success" id="success_email"></p>
-            <input id="passwd" type="password" placeholder="Password" name="passwd" class="col-xs-12 form-control" required>
-            <p class="text-warning" id="warning_passwd"></p>
-            <p class="text-success" id="success_passwd"></p>
-            <input type="submit" class="col-xs-12 btn btn-default btn_submit" id="submit" onclick="validate()">
-            <p class="text-warning" id=warning_general"></p>
-            <p class="text-success" id="success_general"></p>
+
+		<form class="row" method="post" novalidate> <!-- action="" -->
+
+            <input id="name" type="text" placeholder="Name" name="name" class="col-xs-12 form-control"
+                   pattern="[a-zA-Z]*" minlength="3" maxlength="32" required>
+
+            <input id="email" type="email" placeholder="Email" name="email" class="col-xs-12 form-control"
+                   required>
+
+            <input id="passwd" type="password" placeholder="Password" name="passwd" class="col-xs-12 form-control"
+                   minlength="6" required>
+
+            <input type="submit" class="col-xs-12 btn btn-default btn_submit" id="submit" value="Enviar"> <!-- onsubmit="return validate()" -->
+
 		</form>
+        <p class="text-danger" id="errors" class="errors"></p>
 	</div>
 </body>
 	<script src="../controller/register.js"></script>
