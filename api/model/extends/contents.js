@@ -1,12 +1,16 @@
-var id_dad = require('./id_dad.js');
-class contents extends id_dad{
+var name = require('./name.js');
+class contents extends name{
 
-    constructor(id_dad,name,contents){
+    constructor(name){
 
-        super(id_dad,name);
-        this.contents=contents;
+        super(name);
+        this.contents={
 
+            audio:[],
+            folder:[],
+            playlist:[]
+
+        }
     }
-
 }
 module.exports=contents;
