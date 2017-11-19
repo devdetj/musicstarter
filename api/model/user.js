@@ -1,23 +1,33 @@
-var name = require('./extends/name.js');
+let contents = require('./extends/contents.js');
+let db = require('./extends/db.js');
 
-class pre_user extends name{
+class user extends contents{
 
-    constructor(name,passwd,email){
-
+    constructor(name,passwd,register){
         super(name);
-        this.passwd=passwd;
-        this.email=email;
 
+        this.passwd = passwd;
+
+        if(register){
+
+            this.email=register;
+
+        }
     }
 
-}
+    async login(){
 
-class user extends pre_user{
+        let dbs = new db("mongodb://localhost:27017/musicstarter");
+        dbs = await dbs.get_connect();
 
-    constructor(name,passwd,email){
+        let docs =  await dbs.collection('user').findOne({
 
-        super(name,passwd,email);
+            name:this.name,
+            passwd:this.passwd
 
+        });
+        this.dbs = dbs;
+        return docs;
     }
 
 }

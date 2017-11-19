@@ -1,7 +1,18 @@
 
+let MongoClient = require('mongodb').MongoClient;
+ class db {
 
-class db{
-    insert(clt,data,callback){
+     constructor(url) {
+         this.url = url;
+     }
+     async get_connect() {
+         return await MongoClient.connect(this.url);
+     }
+
+ }
+ module.exports = db;
+//module.exports.find = find;
+    /*insert(clt,data,callback){
         var MongoClient = require('mongodb').MongoClient;
         MongoClient.connect("mongodb://localhost:27017/musicstarter", function(err, db) {
 
@@ -25,7 +36,7 @@ class db{
 
     }
     remove(clt,data,callback){
-        var MongoClient = require('mongodb').MongoClient;
+
         MongoClient.connect("mongodb://localhost:27017/musicstarter", function(err, db) {
 
             if (err) {
@@ -44,9 +55,10 @@ class db{
                 db.close();
             });
         });
-    }
-    find(clt,data,callback){
+        update(clt,mongo_id,data,callback){
+
         var MongoClient = require('mongodb').MongoClient;
+
         MongoClient.connect("mongodb://localhost:27017/musicstarter", function(err, db) {
 
             if (err) {
@@ -55,7 +67,7 @@ class db{
                 db.close();
             }
 
-            db.collection(clt).find(data).toArray(function(err2, docs) {
+            db.collection(clt).update({_id:mongo_id},{$set:data},function(err2, docs) {
 
                 if (err2) {
 
@@ -63,12 +75,35 @@ class db{
 
                 }
                 callback(docs);
-
                 db.close();
-
             });
         });
     }
-}
+     in(clt,data){
 
-module.exports = db;
+       return new Promise(reject=>{
+           var MongoClient = require('mongodb').MongoClient;
+           MongoClient.connect("mongodb://localhost:27017/musicstarter", function (err, db){
+
+               if(err){
+
+                   console.log(err);
+
+               }
+               setTimeout(()=>{
+                   console.log({ _id : {$in :  data}});
+                   let docs = db.collection( clt ).find({ _id : {$in : data}}).toArray();
+                   reject(docs);
+
+               },10000);
+
+           });
+       });
+    }
+    }*/
+
+
+
+
+
+
